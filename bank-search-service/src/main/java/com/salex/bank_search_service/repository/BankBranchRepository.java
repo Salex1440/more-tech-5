@@ -1,6 +1,6 @@
-package com.salex.repository;
+package com.salex.bank_search_service.repository;
 
-import com.salex.model.BankBranch;
+import com.salex.bank_search_service.model.BankBranch;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

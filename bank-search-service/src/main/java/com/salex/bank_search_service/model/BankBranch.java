@@ -1,4 +1,4 @@
-package com.salex.model;
+package com.salex.bank_search_service.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

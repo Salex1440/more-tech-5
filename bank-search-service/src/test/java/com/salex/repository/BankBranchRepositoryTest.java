@@ -1,6 +1,7 @@
 package com.salex.repository;
 
-import com.salex.model.BankBranch;
+import com.salex.bank_search_service.model.BankBranch;
+import com.salex.bank_search_service.repository.BankBranchRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
