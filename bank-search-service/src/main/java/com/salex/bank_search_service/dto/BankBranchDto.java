@@ -1,5 +1,6 @@
 package com.salex.bank_search_service.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,9 +30,11 @@ public class BankBranchDto {
     private Float longitude;
 
     @NonNull
+    @JsonProperty("schedule_from")
     private LocalTime scheduleFrom;
 
     @NonNull
+    @JsonProperty("schedule_till")
     private LocalTime scheduleTill;
 
 }
