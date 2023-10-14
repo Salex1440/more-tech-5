@@ -17,6 +17,14 @@ public class BankBranchMapper {
             .longitude(bankBranch.getLongitude())
             .scheduleFrom(bankBranch.getScheduleFrom())
             .scheduleTill(bankBranch.getScheduleTill())
+            .individual(bankBranch.getIndividual())
+            .legalEntity(bankBranch.getLegalEntity())
+            .forInvalid(bankBranch.getForInvalid())
+            .privilegy(bankBranch.getPrivilegy())
+            .weekend(bankBranch.getWeekend())
+            .lateEvening(bankBranch.getLateEvening())
+            .waitingTime(bankBranch.getWaitingTime())
+            .reviewAmount(bankBranch.getReviewAmount())
             .build();
     }
 }

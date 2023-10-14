@@ -37,4 +37,33 @@ public class BankBranchDto {
     @JsonProperty("schedule_till")
     private LocalTime scheduleTill;
 
+    @NonNull
+    private Boolean individual;
+
+    @NonNull
+    @JsonProperty("legal_entity")
+    private Boolean legalEntity;
+
+    @NonNull
+    @JsonProperty("for_invalid")
+    private Boolean forInvalid;
+
+    @NonNull
+    private Boolean privilegy;
+
+    @NonNull
+    private Boolean weekend;
+
+    @NonNull
+    @JsonProperty("late_evening")
+    private Boolean lateEvening;
+
+    @NonNull
+    @JsonProperty("waiting_time")
+    private Integer waitingTime;
+
+    @NonNull
+    @JsonProperty("review_amount")
+    private Integer reviewAmount;
+
 }

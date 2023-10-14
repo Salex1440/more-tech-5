@@ -10,10 +10,14 @@ import reactor.core.publisher.Flux;
 @Repository
 public interface BankBranchRepository extends ReactiveCrudRepository<BankBranch, Long> {
 
-    @Query("SELECT * FROM bank_branch b WHERE (b.latitude >= :minLat AND b.latitude <= :maxLat) AND (b.longitude >= :minLon AND b.longitude <= :maxLon)")
+    @Query("SELECT * FROM bank_branch b " +
+        "WHERE (b.latitude >= :minLat AND b.latitude <= :maxLat) AND (b.longitude >= :minLon AND b.longitude <= :maxLon)" +
+        "ORDER BY b.waiting_time DESC")
     Flux<BankBranch> findAllBetweenCoordinates(@Param("minLat") float minLat,
                                                @Param("minLon") float minLon,
                                                @Param("maxLat") float maxLat,
                                                @Param("maxLon") float maxLon);
+
+
 
 }

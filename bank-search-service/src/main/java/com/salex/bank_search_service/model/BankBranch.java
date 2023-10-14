@@ -46,7 +46,35 @@ public class BankBranch {
     @NonNull
     private LocalTime scheduleTill;
 
-    public BankBranch(@NonNull String city, @NonNull String street, @NonNull String house, String housing, @NonNull Float latitude, @NonNull Float longitude, @NonNull LocalTime scheduleFrom, @NonNull LocalTime scheduleTill) {
+    @NonNull
+    private Boolean individual;
+
+    @NonNull
+    private Boolean legalEntity;
+
+    @NonNull
+    private Boolean forInvalid;
+
+    @NonNull
+    private Boolean privilegy;
+
+    @NonNull
+    private Boolean weekend;
+
+    @NonNull
+    private Boolean lateEvening;
+
+    @NonNull
+    @Min(0)
+    @Max(100)
+    private Integer waitingTime;
+
+    @NonNull
+    @Min(0)
+    private Integer reviewAmount;
+
+
+    public BankBranch(@NonNull String city, @NonNull String street, @NonNull String house, String housing, @NonNull Float latitude, @NonNull Float longitude, @NonNull LocalTime scheduleFrom, @NonNull LocalTime scheduleTill, @NonNull Boolean individual, @NonNull Boolean legalEntity, @NonNull Boolean forInvalid, @NonNull Boolean privilegy, @NonNull Boolean weekend, @NonNull Boolean lateEvening, @NonNull Integer waitingTime, @NonNull Integer reviewAmount) {
         this.city = city;
         this.street = street;
         this.house = house;
@@ -55,5 +83,14 @@ public class BankBranch {
         this.longitude = longitude;
         this.scheduleFrom = scheduleFrom;
         this.scheduleTill = scheduleTill;
+        this.individual = individual;
+        this.legalEntity = legalEntity;
+        this.forInvalid = forInvalid;
+        this.privilegy = privilegy;
+        this.weekend = weekend;
+        this.lateEvening = lateEvening;
+        this.waitingTime = waitingTime;
+        this.reviewAmount = reviewAmount;
     }
+
 }
