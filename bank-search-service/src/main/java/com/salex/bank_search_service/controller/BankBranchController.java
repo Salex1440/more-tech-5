@@ -26,8 +26,19 @@ public class BankBranchController {
                                                               @RequestParam @Min(-180) @Max(180) float minLon,
                                                               @RequestParam @Min(-90) @Max(90) float maxLat,
                                                               @RequestParam @Min(-180) @Max(180) float maxLon,
-                                                              @RequestParam(defaultValue = "20") @Min(value = 1) @Max(value = 200) Integer limit) {
-        return bankBranchService.getBetweenCoordinated(minLat, minLon, maxLat, maxLon, limit);
+                                                              @RequestParam(defaultValue = "20") @Min(value = 1) @Max(value = 200) Integer limit,
+                                                              @RequestParam(defaultValue = "false") boolean filter,
+                                                              @RequestParam(defaultValue = "false") boolean individual,
+                                                              @RequestParam(defaultValue = "false", name = "legal_entity") boolean legalEntity,
+                                                              @RequestParam(defaultValue = "false") boolean invalid,
+                                                              @RequestParam(defaultValue = "false") boolean privilegy,
+                                                              @RequestParam(defaultValue = "false") boolean weekend,
+                                                              @RequestParam(defaultValue = "false", name = "late_evening") boolean lateEvening) {
+        if (filter) {
+            return bankBranchService.getBetweenCoordinatesFiltered(minLat, minLon, maxLat, maxLon, limit, individual, legalEntity, invalid, privilegy, weekend, lateEvening);
+        } else {
+            return bankBranchService.getBetweenCoordinates(minLat, minLon, maxLat, maxLon, limit);
+        }
     }
 
 

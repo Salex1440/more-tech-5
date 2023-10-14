@@ -18,6 +18,24 @@ public interface BankBranchRepository extends ReactiveCrudRepository<BankBranch,
                                                @Param("maxLat") float maxLat,
                                                @Param("maxLon") float maxLon);
 
-
+    @Query("SELECT * FROM bank_branch b " +
+        "WHERE (b.latitude >= :minLat AND b.latitude <= :maxLat) AND (b.longitude >= :minLon AND b.longitude <= :maxLon) " +
+        "AND (b.individual = :individual) " +
+        "AND (b.legal_entity = :legalEntity) " +
+        "AND (b.for_invalid = :forInvalid) " +
+        "AND (b.privilegy = :privilegy) " +
+        "AND (b.weekend = :weekend) " +
+        "AND (b.late_evening = :lateEvening) " +
+        "ORDER BY b.waiting_time DESC")
+    Flux<BankBranch> findFilteredBetweenCoordinates(@Param("minLat") float minLat,
+                                               @Param("minLon") float minLon,
+                                               @Param("maxLat") float maxLat,
+                                               @Param("maxLon") float maxLon,
+                                               @Param("individual") boolean individual,
+                                               @Param("legalEntity") boolean legalEntity,
+                                               @Param("forInvalid") boolean forInvalid,
+                                               @Param("privilegy") boolean privilegy,
+                                               @Param("weekend") boolean weekend,
+                                               @Param("lateEvening") boolean lateEvening);
 
 }

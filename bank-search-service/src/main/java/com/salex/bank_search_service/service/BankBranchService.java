@@ -19,8 +19,18 @@ public class BankBranchService {
     private final BankBranchMapper mapper;
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
-    public Flux<BankBranchDto> getBetweenCoordinated(float minLat, float minLon, float maxLat, float maxLon, Integer limit) {
+    public Flux<BankBranchDto> getBetweenCoordinates(float minLat, float minLon, float maxLat, float maxLon, Integer limit) {
+
         Flux<BankBranch> flux = repository.findAllBetweenCoordinates(minLat, minLon, maxLat, maxLon);
+        return flux.take(limit).map(mapper::toDto);
+    }
+
+    @Transactional(isolation = Isolation.READ_COMMITTED)
+    public Flux<BankBranchDto> getBetweenCoordinatesFiltered(float minLat, float minLon, float maxLat, float maxLon, Integer limit,
+                                                     boolean individual, boolean legalEntity, boolean invalid,
+                                                     boolean privilegy, boolean weekend, boolean lateEvening) {
+
+        Flux<BankBranch> flux = repository.findFilteredBetweenCoordinates(minLat, minLon, maxLat, maxLon, individual, legalEntity, invalid, privilegy, weekend, lateEvening);
         return flux.take(limit).map(mapper::toDto);
     }
 

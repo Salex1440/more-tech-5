@@ -45,7 +45,7 @@ public class BankBranchDto {
     private Boolean legalEntity;
 
     @NonNull
-    @JsonProperty("for_invalid")
+    @JsonProperty("invalid")
     private Boolean forInvalid;
 
     @NonNull
