@@ -62,8 +62,4 @@ public class BankBranchDto {
     @JsonProperty("waiting_time")
     private Integer waitingTime;
 
-    @NonNull
-    @JsonProperty("review_amount")
-    private Integer reviewAmount;
-
 }

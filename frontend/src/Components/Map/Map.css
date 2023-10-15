@@ -1,0 +1,105 @@
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.leaflet-popup-content-wrapper {
+  position: relative;
+  bottom: 30px;
+}
+
+.leaflet-popup-tip-container {
+  bottom: 10px;
+}
+
+.leaflet-container .leaflet-popup a.leaflet-popup-close-button {
+  top: -30px;
+}
+
+.map-container {
+  position: relative;
+  flex-grow: 2;
+}
+
+.map-container__params {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  padding: 10px;
+  width: 35%;
+  border-radius: 21px;
+  border: 2px solid #AAA;
+  background-color: #FFF;
+  transform: translateX(-50%);
+  z-index: 1001;
+}
+
+.params__input-container {
+  display: flex;
+  padding: 6px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #AAA;
+  background: #FFF;
+  color: rgba(0, 0, 0, 0.20);
+  font-family: League Spartan, sans-serif;
+  font-weight: 600;
+}
+
+.map-container__params input {
+  border: none;
+  font-size: 1.1rem;
+  flex-grow: 2;
+}
+
+.map-container__params input:focus-visible {
+  border: none;
+}
+
+.map-container__params input::placeholder {
+  color: rgba(0, 0, 0, 0.20);
+}
+
+.map-container__params span {
+  margin-left: 10px;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.params__tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.params__tag {
+  padding: 5px 10px;
+  margin: 2.5px 5px;
+  border-radius: 10px;
+  border: none;
+  background: #F3F3F3;
+  color: #000;
+  font-family: League Spartan, sans-serif;
+  font-size: 0.8rem;
+}
+
+.selected {
+  background: #00AAFF;
+  color: #FFFFFF;
+}
+
+.cluster-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #FFF;
+  transform: translate(-25%, -25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 1.25rem;
+}

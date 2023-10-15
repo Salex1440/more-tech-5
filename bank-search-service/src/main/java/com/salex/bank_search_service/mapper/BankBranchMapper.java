@@ -24,7 +24,6 @@ public class BankBranchMapper {
             .weekend(bankBranch.getWeekend())
             .lateEvening(bankBranch.getLateEvening())
             .waitingTime(bankBranch.getWaitingTime())
-            .reviewAmount(bankBranch.getReviewAmount())
             .build();
     }
 }
